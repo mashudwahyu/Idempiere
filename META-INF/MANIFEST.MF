@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Testplugin
+Bundle-SymbolicName: com.bajra.testplugin
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: BAJRA
+Automatic-Module-Name: com.bajra.testplugin
+Bundle-RequiredExecutionEnvironment: JavaSE-11
