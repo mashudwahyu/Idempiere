@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="com.bajra.testplugin.MyProcess"
+         name="com.bajra.testplugin.MyProcess"
+         point="org.adempiere.base.Process">
+      <process
+            class="com.bajra.testplugin.MyProcess"
+            priority="">
+      </process>
+   </extension>
+   <extension
+         id="com.bajra.testplugin.GenerateName"
+         point="org.adempiere.base.Process">
+      <process
+            class="com.bajra.testplugin.GenerateName">
+      </process>
+   </extension>
+
+</plugin>

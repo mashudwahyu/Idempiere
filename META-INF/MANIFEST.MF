@@ -1,8 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Testplugin
-Bundle-SymbolicName: com.bajra.testplugin
+Bundle-SymbolicName: com.bajra.testplugin;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: BAJRA
 Automatic-Module-Name: com.bajra.testplugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Import-Package: org.adempiere.base,
+ org.adempiere.util,
+ org.compiere.process
+Service-Component: src/com/bajra/testplugin/ProcessFactory.xml,
+ src/com/bajra/testplugin/GenerateNameProcessFactory.xml
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.adempiere.base;bundle-version="8.2.0",
+ org.adempiere.plugin.utils;bundle-version="8.2.0"
