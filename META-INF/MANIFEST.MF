@@ -9,8 +9,11 @@ Bundle-RequiredExecutionEnvironment: JavaSE-11
 Import-Package: org.adempiere.base,
  org.adempiere.util,
  org.compiere.process
-Service-Component: src/com/bajra/testplugin/ProcessFactory.xml,
- src/com/bajra/testplugin/GenerateNameProcessFactory.xml
+Service-Component: src/com/bajra/testplugin/ProcessFactory.xml,src/com/bajra/testplugin/GenerateNameProcessFactory.xml,src/com/bajra/testplugin/process/GenerateNamaFactory.xml,src/com/bajra/testplugin/callout/IColumnCalloutCalloutFactory.xml,src/com/bajra/testplugin/callout/calloutfactory.xml,
+ OSGI-INF/calloutfactory.xml
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.adempiere.base;bundle-version="8.2.0",
  org.adempiere.plugin.utils;bundle-version="8.2.0"
+Export-Package: com.bajra.testplugin.callout
+Eclipse-Registerbuddy: org.adempiere.base
+Services-Component: OSGI-INF/calloutfactory.xml

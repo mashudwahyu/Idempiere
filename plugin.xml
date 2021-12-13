@@ -6,16 +6,28 @@
          name="com.bajra.testplugin.MyProcess"
          point="org.adempiere.base.Process">
       <process
-            class="com.bajra.testplugin.MyProcess"
+            class="com.bajra.testplugin.yanglama.MyProcess"
             priority="">
       </process>
    </extension>
    <extension
-         id="com.bajra.testplugin.GenerateName"
+         id="com.bajra.testplugin.process.GenerateNama"
+         name="com.bajra.testplugin.process.GenerateNama"
          point="org.adempiere.base.Process">
       <process
-            class="com.bajra.testplugin.GenerateName">
+            class="com.bajra.testplugin.process.GenerateNama"
+            priority="com.bajra.testplugin.process.GenerateNama">
       </process>
+   </extension>
+   <extension
+         id="com.bajra.testplugin.callout.MyCalloutTest.help"
+         point="org.adempiere.base.IColumnCallout">
+      <callout
+            class="com.bajra.testplugin.callout.MyCalloutTest"
+            columnName="Help"
+            priority="1"
+            tableName="M_Product">
+      </callout>
    </extension>
 
 </plugin>
