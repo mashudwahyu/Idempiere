@@ -10,7 +10,7 @@ public class MyCalloutTest implements IColumnCallout {
 
 	@Override
 	public String start(Properties ctx, int WindowNo, GridTab mTab, GridField mField, Object value, Object oldValue) {
-		// TODO Auto-generated method stub
+		mTab.setValue("description",value);
 		System.out.println(ctx+" - "+ WindowNo +" - "+mTab +" - " + mField +" - " + value +" - " + oldValue);
 		return null;
 	}
