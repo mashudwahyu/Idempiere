@@ -23,7 +23,7 @@ public class MyEventHandler extends AbstractEventHandler{
 			System.out.println(" topic = "+ event.getTopic()+" po= "+po);
 		}else if (event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
 			PO po = getPO(event);
-			System.out.println(" topic = "+ event.getTopic()+" po= "+po);
+			System.out.println(" topic = "+ event.getTopic()+" po = "+po);
 			if (po.get_TableName().equals(I_C_BP_Group.Table_Name)) {
 				throw new RuntimeException("No new business partner group for now");
 			}
@@ -35,7 +35,7 @@ public class MyEventHandler extends AbstractEventHandler{
 		// TODO Auto-generated method stub
 		registerEvent(IEventTopics.AFTER_LOGIN);
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, I_C_Order.Table_Name);
-		registerTableEvent(IEventTopics.PO_BEFORE_NEW, I_C_BP_Group.Table_Name);
+		//registerTableEvent(IEventTopics.PO_BEFORE_NEW, I_C_BP_Group.Table_Name);
 		registerTableEvent(IEventTopics.PO_AFTER_NEW, I_M_Product_Category.Table_Name);
 		
 	}

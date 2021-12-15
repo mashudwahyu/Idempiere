@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.bajra.testplugin.model.factory">
+   <implementation class="com.bajra.testplugin.model.MyModelFactory"/>
+   <property name="services.ranking" type="Integer" value="100"/>
+   <service>
+      <provide interface="org.adempiere.base.IModelFactory"/>
+   </service>
+</scr:component>
