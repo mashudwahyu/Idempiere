@@ -11,6 +11,7 @@ public class GenerateNama extends SvrProcess{
 	private String firstName;
 	private String lastName;
 	private int m_product_id;
+	
 	@Override
 	
 	protected void prepare() {

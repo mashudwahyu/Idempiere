@@ -1,10 +1,13 @@
-package com.bajra.testplugin.model;
+package com.bajra.testplugin.component;
 
 import java.sql.ResultSet;
 
 import org.adempiere.base.IModelFactory;
 import org.compiere.model.PO;
 import org.compiere.util.Env;
+
+import com.bajra.testplugin.model.MEVEMain;
+import com.bajra.testplugin.model.MEVESub;
 
 public class MyModelFactory implements IModelFactory{
 

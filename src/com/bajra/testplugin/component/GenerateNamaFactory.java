@@ -1,8 +1,10 @@
-package com.bajra.testplugin.process;
+package com.bajra.testplugin.component;
 
 
 import org.adempiere.base.IProcessFactory;
 import org.compiere.process.ProcessCall;
+
+import com.bajra.testplugin.process.GenerateNama;
 
 public class GenerateNamaFactory implements IProcessFactory{
 

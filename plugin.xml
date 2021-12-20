@@ -29,5 +29,14 @@
             tableName="M_Product">
       </callout>
    </extension>
+   <extension
+         id="com.bajra.testplugin.callout.CalloutTest2.start"
+         point="org.adempiere.base.IColumnCallout">
+      <callout
+            class="com.bajra.testplugin.callout.CalloutTest2"
+            columnName="M_Product_ID"
+            tableName="EVE_Main">
+      </callout>
+   </extension>
 
 </plugin>
