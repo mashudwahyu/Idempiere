@@ -78,18 +78,6 @@ public class X_EVE_Sub extends PO implements I_EVE_Sub, I_Persistent
 		@param Description 
 		Optional short description of the record
 	  */
-	public void setDescription (String Description)
-	{
-		set_Value (COLUMNNAME_Description, Description);
-	}
-
-	/** Get Description.
-		@return Optional short description of the record
-	  */
-	public String getDescription () 
-	{
-		return (String)get_Value(COLUMNNAME_Description);
-	}
 
 	public I_EVE_Main getEVE_Main() throws RuntimeException
     {

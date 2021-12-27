@@ -80,19 +80,6 @@ public interface I_EVE_Sub
 	  */
 	public int getCreatedBy();
 
-    /** Column name Description */
-    public static final String COLUMNNAME_Description = "Description";
-
-	/** Set Description.
-	  * Optional short description of the record
-	  */
-	public void setDescription (String Description);
-
-	/** Get Description.
-	  * Optional short description of the record
-	  */
-	public String getDescription();
-
     /** Column name EVE_Main_ID */
     public static final String COLUMNNAME_EVE_Main_ID = "EVE_Main_ID";
 

@@ -1,16 +1,22 @@
 package com.bajra.testplugin.process;
 
-import java.math.BigDecimal;
-import java.sql.Timestamp;
 
+import org.compiere.model.MProduct;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
+
+
 import com.bajra.testplugin.model.MEVEMain;
+import com.bajra.testplugin.model.MEVESub;
+
 
 public class SetParameter extends SvrProcess{
 	
-	private int qty;
-	private int EVE_Main_ID;
+	private int qty=0;
+	private int eve_main_id;
+	private String value = "";
+	private String nama = "";
+	
 	@Override
 	protected void prepare() {
 		// TODO Auto-generated method stub
@@ -20,17 +26,30 @@ public class SetParameter extends SvrProcess{
 			if(para[i].getParameter() == null)
 				;
 			else if (name.equalsIgnoreCase("EVE_Main_ID")) 
-				EVE_Main_ID = para[i].getParameterAsInt();
-			else if(name.equalsIgnoreCase("qty"))
+				eve_main_id = para[i].getParameterAsInt();
+			else if(name.equalsIgnoreCase("Qty"))
 				qty = para[i].getParameterAsInt();
 			else
 				log.severe("Unknown Parameter : " + name);
 		}
-		log.info("Process Prepare with " + EVE_Main_ID + " " + qty);
+		log.info("Process Prepare with " + eve_main_id + " " + qty);
 	}
 	@Override
 	protected String doIt() throws Exception {
 		// TODO Auto-generated method stub
+		MEVEMain main = new MEVEMain(getCtx(), eve_main_id, get_TrxName());
+		main.getM_Product_ID();
+		MProduct product = new MProduct(getCtx(), main.getM_Product_ID(), null);
+		value = product.getValue();
+		nama = product.getName();
+		for(int i=0;i<qty;i++) {
+			MEVESub sub = new MEVESub(getCtx(), 0, get_TrxName());
+			sub.setValue(value);
+			sub.setName(nama);
+			sub.setEVE_Main_ID(eve_main_id);
+			sub.saveEx();	
+		}
+		addLog("Berhasil!! /n Silahkan cek table eve main");
 		return null;
 	}
 }

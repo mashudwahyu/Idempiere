@@ -6,7 +6,7 @@ import org.compiere.process.ProcessCall;
 import com.bajra.testplugin.process.SetParameter;
 
 
-public class ProcessFactory implements IProcessFactory{
+public class SetParameterFactory implements IProcessFactory{
 
 	@Override
 	public ProcessCall newProcessInstance(String className) {

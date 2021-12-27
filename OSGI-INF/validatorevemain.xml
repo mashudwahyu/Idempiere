@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.bajra.testplugin.event.validatorevemain">
+   <implementation class="com.bajra.testplugin.event.ValidatorEVEMain"/>
+   <property name="services.ranking" type="Integer" value="100"/>
+   <service>
+      <provide interface="org.adempiere.base.event.IEventManager"/>
+   </service>
+</scr:component>

@@ -2,15 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         id="com.bajra.testplugin.MyProcess"
-         name="com.bajra.testplugin.MyProcess"
-         point="org.adempiere.base.Process">
-      <process
-            class="com.bajra.testplugin.yanglama.MyProcess"
-            priority="">
-      </process>
-   </extension>
-   <extension
          id="com.bajra.testplugin.process.GenerateNama"
          name="com.bajra.testplugin.process.GenerateNama"
          point="org.adempiere.base.Process">
@@ -37,6 +28,14 @@
             columnName="M_Product_ID"
             tableName="EVE_Main">
       </callout>
+   </extension>
+   <extension
+         id="com.bajra.testplugin.process.SetParameter"
+         name="com.bajra.testplugin.process.SetParameter"
+         point="org.adempiere.base.Process">
+      <process
+            class="com.bajra.testplugin.process.SetParameter">
+      </process>
    </extension>
 
 </plugin>

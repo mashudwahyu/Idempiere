@@ -35,5 +35,6 @@ public class CalloutTest2 implements IColumnCallout {
 			if(product.get_Value("Name")!= null)
 				mTab.setValue("Name", product.get_Value("Name"));
 		}
+		
 	}
 }
