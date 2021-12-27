@@ -44,12 +44,14 @@ public class SetParameter extends SvrProcess{
 		nama = product.getName();
 		for(int i=0;i<qty;i++) {
 			MEVESub sub = new MEVESub(getCtx(), 0, get_TrxName());
-			sub.setValue(value);
-			sub.setName(nama);
+			sub.setValue(value+i); 
+//			System.out.print(i);
+			sub.setName(nama+i);
+//			System.out.print(i);
 			sub.setEVE_Main_ID(eve_main_id);
 			sub.saveEx();	
 		}
-		addLog("Berhasil!! /n Silahkan cek table eve main");
+		addLog("Berhasil!! Silahkan cek table eve sub");
 		return null;
 	}
 }
