@@ -45,9 +45,7 @@ public class SetParameter extends SvrProcess{
 		for(int i=0;i<qty;i++) {
 			MEVESub sub = new MEVESub(getCtx(), 0, get_TrxName());
 			sub.setValue(value+i); 
-//			System.out.print(i);
 			sub.setName(nama+i);
-//			System.out.print(i);
 			sub.setEVE_Main_ID(eve_main_id);
 			sub.saveEx();	
 		}
