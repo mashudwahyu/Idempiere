@@ -16,7 +16,7 @@ public class ValidatorEVEMain{
 		main = po;
 		Namemain = main.getName();
 		main.getM_Product_ID();
-		MProduct product = new MProduct(main.getCtx(), main.getM_Product_ID(), null);
+		MProduct product = new MProduct(main.getCtx(), main.getM_Product_ID(), main.get_TrxName());
 		Nameproduct = product.getName();
 		this.event = event;
 		
@@ -26,12 +26,12 @@ public class ValidatorEVEMain{
 	public String run()
 	{
 		if(main!=null && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
-			if(Namemain!=Nameproduct) {
+			if(Namemain.equals(Nameproduct)==false) {
 				throw new RuntimeException("Data tidak sama, tidak dapat menyimpan");
 			}
 		}
 		if(main!=null && event.getTopic().equals(IEventTopics.PO_BEFORE_CHANGE)) {
-			if(Namemain!=Nameproduct) {
+			if(Namemain.equals(Nameproduct)==false) {
 				throw new RuntimeException("Data tidak sama, tidak dapat menyimpan");
 			}
 		}
