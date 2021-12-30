@@ -11,7 +11,7 @@
       </process>
    </extension>
    <extension
-         id="com.bajra.testplugin.callout.MyCalloutTest.help"
+         id="com.bajra.testplugin.callout.CalloutDescriptionProduct.help"
          point="org.adempiere.base.IColumnCallout">
       <callout
             class="com.bajra.testplugin.callout.CalloutDescriptionProduct"
@@ -36,10 +36,5 @@
       <process
             class="com.bajra.testplugin.process.SetParameter">
       </process>
-
-   <extension
-         id="id1"
-         point="org.adempiere.base.Process">
-   </extension>   </extension>
-
+  </extension>
 </plugin>
