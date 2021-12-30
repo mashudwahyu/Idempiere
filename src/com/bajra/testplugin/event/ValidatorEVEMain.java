@@ -26,7 +26,7 @@ public class ValidatorEVEMain{
 	public String run()
 	{
 		if(main!=null && event.getTopic().equals(IEventTopics.PO_BEFORE_NEW)) {
-			if(Namemain.equals(Nameproduct)==false) {
+			if(!Namemain.equals(Nameproduct)) {
 				throw new RuntimeException("Data tidak sama, tidak dapat menyimpan");
 			}
 		}

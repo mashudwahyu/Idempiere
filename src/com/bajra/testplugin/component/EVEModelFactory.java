@@ -9,7 +9,7 @@ import org.compiere.util.Env;
 import com.bajra.testplugin.model.MEVEMain;
 import com.bajra.testplugin.model.MEVESub;
 
-public class MyModelFactory implements IModelFactory{
+public class EVEModelFactory implements IModelFactory{
 
 	@Override
 	public Class<?> getClass(String tableName) {

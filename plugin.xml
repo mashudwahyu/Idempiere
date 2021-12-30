@@ -14,7 +14,7 @@
          id="com.bajra.testplugin.callout.MyCalloutTest.help"
          point="org.adempiere.base.IColumnCallout">
       <callout
-            class="com.bajra.testplugin.callout.MyCalloutTest"
+            class="com.bajra.testplugin.callout.CalloutDescriptionProduct"
             columnName="Help"
             priority="1"
             tableName="M_Product">
@@ -24,7 +24,7 @@
          id="com.bajra.testplugin.callout.CalloutTest2.start"
          point="org.adempiere.base.IColumnCallout">
       <callout
-            class="com.bajra.testplugin.callout.CalloutTest2"
+            class="com.bajra.testplugin.callout.CalloutMevemain"
             columnName="M_Product_ID"
             tableName="EVE_Main">
       </callout>
@@ -36,6 +36,10 @@
       <process
             class="com.bajra.testplugin.process.SetParameter">
       </process>
-   </extension>
+
+   <extension
+         id="id1"
+         point="org.adempiere.base.Process">
+   </extension>   </extension>
 
 </plugin>

@@ -1,7 +1,11 @@
 package com.bajra.testplugin.model;
 
 import java.sql.ResultSet;
+import java.util.List;
 import java.util.Properties;
+
+import org.compiere.model.Query;
+
 
 public class MEVEMain extends X_EVE_Main{
 
@@ -17,6 +21,14 @@ public class MEVEMain extends X_EVE_Main{
 		// TODO Auto-generated constructor stub
 	}
 
-	
+public MEVESub[] getLines(){
+		
+		List<MEVESub> list = new Query(getCtx(), MEVESub.Table_Name, COLUMNNAME_EVE_Main_ID+"=?", get_TrxName())
+							.setParameters(getEVE_Main_ID())
+							.setOnlyActiveRecords(true)
+							.list();
+		
+		return list.toArray(new MEVESub[list.size()]);
+	}
 		
 }

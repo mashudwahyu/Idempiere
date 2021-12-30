@@ -11,7 +11,7 @@ import com.bajra.testplugin.model.MEVEMain;
 
 
 
-public class CalloutTest2 implements IColumnCallout {
+public class CalloutMevemain implements IColumnCallout {
 
 	@Override
 	public String start(Properties ctx, int WindowNo, GridTab mTab, GridField mField, Object value, Object oldValue) {

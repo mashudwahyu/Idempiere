@@ -7,11 +7,11 @@ import org.adempiere.base.IColumnCallout;
 import org.adempiere.base.IColumnCalloutFactory;
 import org.compiere.model.MProduct;
 
-import com.bajra.testplugin.callout.CalloutTest2;
+import com.bajra.testplugin.callout.CalloutMevemain;
 
 
 
-public class Callouttest2Factory implements IColumnCalloutFactory {
+public class CalloutMevemainFactory implements IColumnCalloutFactory {
 
 	@Override
 	public IColumnCallout[] getColumnCallouts(String tableName, String columnName) {
@@ -19,7 +19,7 @@ public class Callouttest2Factory implements IColumnCalloutFactory {
 		List<IColumnCallout> list = new ArrayList<IColumnCallout>();
 		
 		if(tableName.equals(MProduct.Table_Name) && columnName.equals(MProduct.COLUMNNAME_M_Product_ID))
-			list.add(new CalloutTest2());
+			list.add(new CalloutMevemain());
 		
 		
 		return list != null ? list.toArray(new IColumnCallout[0]) : new IColumnCallout[0];
