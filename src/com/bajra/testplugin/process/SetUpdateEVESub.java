@@ -1,7 +1,6 @@
 package com.bajra.testplugin.process;
 
 
-import org.compiere.model.MProduct;
 import org.compiere.process.ProcessInfoParameter;
 import org.compiere.process.SvrProcess;
 
@@ -9,10 +8,8 @@ import org.compiere.process.SvrProcess;
 import com.bajra.testplugin.model.MEVEMain;
 import com.bajra.testplugin.model.MEVESub;
 
-
-public class SetParameter extends SvrProcess{
+public class SetUpdateEVESub extends SvrProcess{
 	
-	private int qty=0;
 	private int eve_main_id;
 	private String value = "";
 	private String nama = "";
@@ -27,29 +24,34 @@ public class SetParameter extends SvrProcess{
 				;
 			else if (name.equalsIgnoreCase("EVE_Main_ID")) 
 				eve_main_id = para[i].getParameterAsInt();
-			else if(name.equalsIgnoreCase("Qty"))
-				qty = para[i].getParameterAsInt();
 			else
 				log.severe("Unknown Parameter : " + name);
 		}
-		log.info("Process Prepare with " + eve_main_id + " " + qty);
+		log.info("Process Prepare with " + eve_main_id);
 	}
+
 	@Override
 	protected String doIt() throws Exception {
 		// TODO Auto-generated method stub
+		
 		MEVEMain main = new MEVEMain(getCtx(), eve_main_id, get_TrxName());
-		main.getM_Product_ID();
-		MProduct product = new MProduct(getCtx(), main.getM_Product_ID(), null);
-		value = product.getValue();
-		nama = product.getName();
-		for(int i=0;i<qty;i++) {
-			MEVESub sub = new MEVESub(getCtx(), 0, get_TrxName());
-			sub.setValue(value+" "+i); 
-			sub.setName(nama+" "+i);
-			sub.setEVE_Main_ID(eve_main_id);
-			sub.saveEx();	
+		MEVESub[] lines = main.getLines();
+		
+		for(MEVESub line : lines){
+				if(lines==null) {
+					return "Eve Main doesnt have line";
+				}else{
+					value=line.getValue();
+					nama=line.getName();
+					line.setValue(value+" Updated"); 
+					line.setName(nama+" Updated");
+					line.setEVE_Main_ID(eve_main_id);
+					line.saveEx();
+					addLog("Berhasil!! Silahkan cek EVE Main");
+				}
 		}
-		addLog("Berhasil!! Silahkan cek table eve sub");
-		return null;
+		
+		return "Eve Main doesnt have line";
 	}
+
 }

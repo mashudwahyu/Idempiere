@@ -10,7 +10,8 @@ Import-Package: org.adempiere.base,
  org.adempiere.util,
  org.compiere.model,
  org.compiere.process
-Service-Component: OSGI-INF/validatorevemain.xml,OSGI-INF/mymodelfactory.xml,OSGI-INF/setparameterfactory.xml
+Service-Component: OSGI-INF/validatorevemain.xml,OSGI-INF/EVEModelFactory.xml,OSGI-INF/setparameterfactory.xml,
+ OSGI-INF/SetUpdateMEVESubFactory.xml
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.adempiere.base;bundle-version="8.2.0",
  org.adempiere.plugin.utils;bundle-version="8.2.0",

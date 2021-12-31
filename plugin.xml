@@ -37,4 +37,12 @@
             class="com.bajra.testplugin.process.SetParameter">
       </process>
   </extension>
+   <extension
+         id="com.bajra.testplugin.process.SetUpdateEVESub"
+         point="org.adempiere.base.Process">
+      <process
+            class="com.bajra.testplugin.process.SetUpdateEVESub"
+            priority="com.bajra.testplugin.process.SetUpdateEVESub">
+      </process>
+   </extension>
 </plugin>

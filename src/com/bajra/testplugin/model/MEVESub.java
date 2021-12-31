@@ -22,8 +22,8 @@ public class MEVESub extends X_EVE_Sub{
 	}
 	
 	public MEVESub(MEVEMain main) {
-		super(main.getCtx(), 0, main.get_TrxName());
-		setAD_Org_ID(main.getAD_Org_ID());
+		super(main.getCtx(), main.getEVE_Main_ID(), main.get_TrxName());
+		//setAD_Org_ID(main.getAD_Org_ID());
 		
 		setEVE_Main_ID(main.getEVE_Main_ID());
 	}
